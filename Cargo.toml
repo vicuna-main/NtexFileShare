@@ -1,0 +1,30 @@
+[package]
+name = "FileShare"
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = "thin"
+strip = true
+panic = "abort"
+codegen-units = 16
+debug-assertions = false
+
+[profile.dev]
+opt-level = "s"
+debug = true
+lto = true
+strip = false
+panic = "unwind"
+codegen-units = 16
+debug-assertions = true
+
+[dependencies]
+ntex = { version = "2.17.0", features = ["tokio"] }
+ntex-files = "2.1.0"
+env_logger = "0.11.8"
+clap = { version = "4.5.53", features = ["derive"] }
+log = "0.4.29"
+local_ipaddress = "0.1.3"
