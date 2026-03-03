@@ -1,4 +1,4 @@
-use ntex::{web};
+use ntex::web;
 use ntex_files::Files;
 use env_logger::Env;
 use clap::Parser;
@@ -34,7 +34,7 @@ fn default_worker_count() -> usize {
 // 参数输出
 fn print_args(args: &Args) {
     println!("运行参数:");
-    println!("  文件目录: {}", args.file_dir);
+    println!("  共享文件目录: {}", args.file_dir);
     println!("  URL路径: {}", args.url_path);
     println!("  日志级别: {}", args.log_level);
     println!("  端口: {}", args.port);
